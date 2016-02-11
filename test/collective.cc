@@ -1,13 +1,13 @@
 
 #include <pthread.h>
-#include <dharma/transport.h>
+#include <sumi/transport.h>
 #include <sprockit/sim_parameters.h>
 #include <sprockit/serializer.h>
 #include <sprockit/util.h>
 
 #define DEBUG 0
 
-using namespace dharma;
+using namespace sumi;
 
 void*
 msg_thread_run(void* args);
@@ -70,8 +70,8 @@ int main(int argc, char** argv)
   try {
 #if DEBUG
   sprockit::debug::turn_on(DEFAULT_TRANSPORT);
-  sprockit::debug::turn_on("dharma");
-  sprockit::debug::turn_on("dharma_collective");
+  sprockit::debug::turn_on("sumi");
+  sprockit::debug::turn_on("sumi_collective");
 #endif
     run_test();
   } catch (std::exception& e) {

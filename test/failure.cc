@@ -1,13 +1,13 @@
 #include <sprockit/test/test.h>
 #include <sprockit/sim_parameters.h>
 #include <sprockit/stl_string.h>
-#include <dharma/transport.h>
-#include <dharma/dense_rank_map.h>
+#include <sumi/transport.h>
+#include <sumi/dense_rank_map.h>
 #include <unistd.h>
 
 #define DEBUG 0
 
-using namespace dharma;
+using namespace sumi;
 
 
 void
@@ -110,9 +110,9 @@ run_test()
   sprockit::sim_parameters params;
 #if DEBUG
   //sprockit::debug::turn_on(DEFAULT_TRANSPORT);
-  sprockit::debug::turn_on("dharma_collective");
-  sprockit::debug::turn_on("dharma");
-  //sprockit::debug::turn_on("dharma_ping");
+  sprockit::debug::turn_on("sumi_collective");
+  sprockit::debug::turn_on("sumi");
+  //sprockit::debug::turn_on("sumi_ping");
 #endif
 
   params["transport"] = DEFAULT_TRANSPORT;
@@ -120,7 +120,7 @@ run_test()
   params["eager_cutoff"] = "0";
   params["use_put_protocol"] = "false";
   params["ping_timeout"] = "10ms";
-  transport* t = dharma::transport_factory::get_param("transport", &params);
+  transport* t = sumi::transport_factory::get_param("transport", &params);
 
   t->init();
   int me = t->rank();

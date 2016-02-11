@@ -21,19 +21,19 @@ endif
 
 
 
-noinst_LTLIBRARIES = libdharma_sst.la
-libdharma_sst_la_LDFLAGS = 
+noinst_LTLIBRARIES = libsumi_sst.la
+libsumi_sst_la_LDFLAGS = 
 
-libdharma_sst_la_SOURCES = \
-  dharma_api.cc \
-  sumi_dharma_transport.cc
+libsumi_sst_la_SOURCES = \
+  sumi_api.cc \
+  sumi_sumi_transport.cc
 
-library_includedir=$(includedir)/dharma/sst
+library_includedir=$(includedir)/sumi/sst
 
 nobase_library_include_HEADERS = \
- dharma_api.h \
+ sumi_api.h \
  rdma.h \
- sumi_dharma_transport.h
+ sumi_sumi_transport.h
 
 # subscription.cc 
 # subscription.h 

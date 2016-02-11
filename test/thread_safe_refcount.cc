@@ -1,7 +1,7 @@
 #include <sprockit/test/test.h>
-#include <dharma/thread_safe_ptr_type.h>
+#include <sumi/thread_safe_ptr_type.h>
 
-using namespace dharma;
+using namespace sumi;
 
 static int numAdeleted = 0;
 static int numBdeleted = 0;

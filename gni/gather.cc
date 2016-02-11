@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <cstring>
 
-namespace dharma {
+namespace sumi {
 
 template <class peer_data_t>
 peer_data_t* 

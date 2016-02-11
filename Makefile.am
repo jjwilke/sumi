@@ -27,7 +27,7 @@ if ENABLE_MPI
 SUBDIRS += mpi
 endif
 
-SUBDIRS += dharma 
+SUBDIRS += sumi 
 
 if !ENABLE_SST_SUBREPO
 SUBDIRS += test

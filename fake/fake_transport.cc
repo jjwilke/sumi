@@ -2,7 +2,7 @@
 #include <sprockit/sim_parameters.h>
 #include <unistd.h>
 
-namespace dharma {
+namespace sumi {
 
 SpktRegister("fake", transport, fake_transport, "A fake transport that doesn't actually send messages - just logs them");
 

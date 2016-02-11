@@ -2,7 +2,7 @@
 #include <list>
 #include <cstring>
 
-namespace dharma {
+namespace sumi {
 
 void
 gni_transport::register_mem(uint64_t length, void* buffer, gni_mem_handle_t* mem_handle, gni_nic_handle_t nic_handle, gni_cq_handle_t cq_handle)

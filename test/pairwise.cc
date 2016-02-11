@@ -1,9 +1,9 @@
 #include <pthread.h>
-#include <dharma/transport.h>
+#include <sumi/transport.h>
 #include <sprockit/sim_parameters.h>
 #include <sprockit/serializer.h>
 
-using namespace dharma;
+using namespace sumi;
 
 #define BUFSIZE 1024
 #define EAGERSIZE 100
@@ -208,9 +208,9 @@ int main(int argc, char** argv)
   try {
 #if DEBUG
   sprockit::debug::turn_on(DEFAULT_TRANSPORT);
-  sprockit::debug::turn_on("dharma");
-  sprockit::debug::turn_on("dharma_collective");
-  sprockit::debug::turn_on("dharma_ping");
+  sprockit::debug::turn_on("sumi");
+  sprockit::debug::turn_on("sumi_collective");
+  sprockit::debug::turn_on("sumi_ping");
 #endif
     run_test();
   } catch (std::exception& e) {

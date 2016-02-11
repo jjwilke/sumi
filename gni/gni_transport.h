@@ -1,14 +1,14 @@
 #ifndef mpi_mpi_transport_h
 #define mpi_mpi_transport_h
 
-#include <dharma/monitor.h>
-#include <dharma/timeout.h>
-#include <dharma/message.h>
-#include <dharma/collective.h>
-#include <dharma/transport.h>
-#include <dharma/comm_functions.h>
-#include <dharma/active_msg_transport.h>
-#include <dharma/thread_lock.h>
+#include <sumi/monitor.h>
+#include <sumi/timeout.h>
+#include <sumi/message.h>
+#include <sumi/collective.h>
+#include <sumi/transport.h>
+#include <sumi/comm_functions.h>
+#include <sumi/active_msg_transport.h>
+#include <sumi/thread_lock.h>
 #include <gni_pub.h>
 #include <pmi.h>
 
@@ -40,7 +40,7 @@ DeclareDebugSlot(gni)
 
 #define wunderbahr GNI_RC_SUCCESS
 
-namespace dharma {
+namespace sumi {
 
 struct gni_comm_context :
   public lockable

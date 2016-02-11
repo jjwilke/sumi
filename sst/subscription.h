@@ -1,7 +1,7 @@
-#include <dharma/monitor.h>
+#include <sumi/monitor.h>
 #include <sstmac/hardware/network/network_message.h>
 
-namespace dharma {
+namespace sumi {
 
 class subscription
 {

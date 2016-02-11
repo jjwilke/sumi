@@ -5,4 +5,4 @@
 
 #include @rdma_header_file_include@
 #define DEFAULT_TRANSPORT "@default_transport@"
-#define DHARMA_USE_SPINLOCK @dharma_use_spinlock@
+#define SUMI_USE_SPINLOCK @sumi_use_spinlock@

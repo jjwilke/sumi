@@ -10,14 +10,14 @@ dnl   SST/macroscale directory.
 dnl
 
 dnl Version info
-m4_define([DHARMA_VERSION_TAG], 1)
-m4_define([DHARMA_SUBVERSION_TAG], 0)
-m4_define([DHARMA_SUBSUBVERSION_TAG], 0)
+m4_define([SUMI_VERSION_TAG], 1)
+m4_define([SUMI_SUBVERSION_TAG], 0)
+m4_define([SUMI_SUBSUBVERSION_TAG], 0)
 # Enable this for releases
-dnl m4_define([DHARMA_SNAPSHOT_TAG])
+dnl m4_define([SUMI_SNAPSHOT_TAG])
 # Enable this for development snapshots (should generally be enabled)
-m4_define([DHARMA_ACVERSION_TAG],
-          [DHARMA_VERSION_TAG.DHARMA_SUBVERSION_TAG.DHARMA_SUBSUBVERSION_TAG])
+m4_define([SUMI_ACVERSION_TAG],
+          [SUMI_VERSION_TAG.SUMI_SUBVERSION_TAG.SUMI_SUBSUBVERSION_TAG])
 
 dnl Libtool library versioning is
 dnl a useful idea implemented in a confusing way.
@@ -27,17 +27,17 @@ dnl     subversion B (backward compatible for all A:X where X <= B)
 dnl     and A is backward compatible to major version A-C
 dnl which means that C <= A,
 dnl and C == 0 means no major-version backward compatibility.
-m4_define([DHARMA_MAJOR_LIBVERS], 1)
-m4_define([DHARMA_MINOR_LIBVERS], 0)
-m4_define([DHARMA_BACKW_LIBVERS], 0)
-m4_define([DHARMA_LIBVERSION_TAG],
-          [DHARMA_MAJOR_LIBVERS:DHARMA_MINOR_LIBVERS:DHARMA_BACKW_LIBVERS])
+m4_define([SUMI_MAJOR_LIBVERS], 1)
+m4_define([SUMI_MINOR_LIBVERS], 0)
+m4_define([SUMI_BACKW_LIBVERS], 0)
+m4_define([SUMI_LIBVERSION_TAG],
+          [SUMI_MAJOR_LIBVERS:SUMI_MINOR_LIBVERS:SUMI_BACKW_LIBVERS])
 
-AC_INIT([dharma], [DHARMA_ACVERSION_TAG], [jjwilke@sandia.gov])
+AC_INIT([sumi], [SUMI_ACVERSION_TAG], [jjwilke@sandia.gov])
 AC_CONFIG_MACRO_DIR([acinclude])
 AC_CONFIG_AUX_DIR(bin)
-AC_CONFIG_HEADER(dharma/dharmaconfig-generated.h)
-AX_PREFIX_CONFIG_H(dharma/dharma_config.h, DHARMA)
+AC_CONFIG_HEADER(sumi/sumiconfig-generated.h)
+AX_PREFIX_CONFIG_H(sumi/sumi_config.h, SUMI)
 
 AC_CANONICAL_SYSTEM
 AM_INIT_AUTOMAKE([-Wall -Werror -Wno-portability subdir-objects foreign])
@@ -51,13 +51,13 @@ LT_INIT([disable-shared])
 
 
 # Version info.
-AH_TEMPLATE([DHARMA_VERSION], [Major version number])
-AH_TEMPLATE([DHARMA_SUBVERSION], [Major version number])
-AH_TEMPLATE([DHARMA_SUBSUBVERSION], [Major version number])
-AC_DEFINE_UNQUOTED(DHARMA_VERSION, [DHARMA_VERSION_TAG])
-AC_DEFINE_UNQUOTED(DHARMA_SUBVERSION, [DHARMA_SUBVERSION_TAG])
-AC_DEFINE_UNQUOTED(DHARMA_SUBSUBVERSION, [DHARMA_SUBSUBVERSION_TAG])
-AC_SUBST(DHARMA_LIBVERSION, [DHARMA_LIBVERSION_TAG])
+AH_TEMPLATE([SUMI_VERSION], [Major version number])
+AH_TEMPLATE([SUMI_SUBVERSION], [Major version number])
+AH_TEMPLATE([SUMI_SUBSUBVERSION], [Major version number])
+AC_DEFINE_UNQUOTED(SUMI_VERSION, [SUMI_VERSION_TAG])
+AC_DEFINE_UNQUOTED(SUMI_SUBVERSION, [SUMI_SUBVERSION_TAG])
+AC_DEFINE_UNQUOTED(SUMI_SUBSUBVERSION, [SUMI_SUBSUBVERSION_TAG])
+AC_SUBST(SUMI_LIBVERSION, [SUMI_LIBVERSION_TAG])
 
 
 AC_ARG_ENABLE(sst-subrepo,
@@ -72,7 +72,7 @@ else
   AM_CONDITIONAL(ENABLE_SST_SUBREPO, true)
 fi
 
-CHECK_REPO_BUILD([dharma])
+CHECK_REPO_BUILD([sumi])
 
 CHECK_CPP11()
 
@@ -86,9 +86,9 @@ CHECK_SPINLOCK()
 
 AC_CONFIG_FILES([
  Makefile
- dharma/Makefile
+ sumi/Makefile
  test/Makefile
- dharma/config.h:config.h.in
+ sumi/config.h:config.h.in
 ])
 AC_OUTPUT
 

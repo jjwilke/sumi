@@ -11,10 +11,10 @@
 
 AM_CPPFLAGS = -I$(top_builddir) -I$(top_srcdir) 
 
-noinst_LTLIBRARIES = libdharma_gni.la
-libdharma_gni_la_LDFLAGS = 
+noinst_LTLIBRARIES = libsumi_gni.la
+libsumi_gni_la_LDFLAGS = 
 
-libdharma_gni_la_SOURCES = \
+libsumi_gni_la_SOURCES = \
  cdm.cc \
  cq.cc \
  ep.cc \
@@ -35,7 +35,7 @@ libdharma_gni_la_SOURCES = \
  smsg_send.cc \
  util.cc
 
-library_includedir=$(includedir)/dharma/gni
+library_includedir=$(includedir)/sumi/gni
 
 nobase_library_include_HEADERS = \
  gather.h \

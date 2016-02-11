@@ -1,7 +1,7 @@
 #include <gni/gni_transport.h>
 #include <iostream>
 
-namespace dharma {
+namespace sumi {
 
 void
 gni_transport::init_end_points(gni_comm_context& c)

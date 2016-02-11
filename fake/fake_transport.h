@@ -1,7 +1,7 @@
-#include <dharma/transport.h>
-#include <dharma/thread_safe_set.h>
+#include <sumi/transport.h>
+#include <sumi/thread_safe_set.h>
 
-namespace dharma {
+namespace sumi {
 
 class fake_transport : public transport
 {

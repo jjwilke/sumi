@@ -1,10 +1,10 @@
 #ifndef GNI_RDMA_H
 #define GNI_RDMA_H
 
-#include <dharma/rdma_mdata.h>
+#include <sumi/rdma_mdata.h>
 #include <gni_pub.h>
 
-namespace dharma {
+namespace sumi {
 
 struct public_buffer :
  public public_buffer_base

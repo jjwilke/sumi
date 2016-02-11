@@ -8,7 +8,7 @@ bin_PROGRAMS = \
   thread_safe_classes \
   thread_safe_refcount
 
-exe_LDADD = ../dharma/libdharma.la
+exe_LDADD = ../sumi/libsumi.la
 
 pairwise_SOURCES = pairwise.cc
 failure_SOURCES = failure.cc

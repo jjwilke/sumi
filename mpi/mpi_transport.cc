@@ -9,10 +9,10 @@
 DeclareDebugSlot(mpi);
 RegisterDebugSlot(mpi);
 
-namespace dharma {
+namespace sumi {
 
 SpktRegister("mpi", transport, mpi_transport,
-            "Create a DHARMA transport suitable for MPI");
+            "Create a SUMI transport suitable for MPI");
 
 #define enumcase(x) case x: return #x
 

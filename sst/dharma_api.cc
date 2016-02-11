@@ -1,5 +1,5 @@
-#include <sst/dharma_api.h>
-#include <sst/sumi_dharma_transport.h>
+#include <sst/sumi_api.h>
+#include <sst/sumi_sumi_transport.h>
 #include <sstmac/software/process/app_manager.h>
 #include <sstmac/software/process/app.h>
 #include <sprockit/util.h>
@@ -7,19 +7,19 @@
 using namespace sstmac;
 using namespace sstmac::sw;
 
-namespace dharma {
+namespace sumi {
 
-SpktRegister("dharma", api, sumi_dharma_transport, "Create bindings for DHARMA runtime");
+SpktRegister("sumi", api, sumi_sumi_transport, "Create bindings for SUMI runtime");
 
-static sumi_dharma_transport*
+static sumi_sumi_transport*
 current_transport()
 {
   thread* t = thread::current();
-  return t->get_api<sumi_dharma_transport> ();
+  return t->get_api<sumi_sumi_transport> ();
 }
 
 transport*
-dharma_api()
+sumi_api()
 {
   return current_transport();
 }

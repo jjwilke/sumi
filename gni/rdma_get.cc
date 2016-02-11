@@ -1,7 +1,7 @@
 #include <gni/gni_transport.h>
 #include <cstring>
 
-namespace dharma {
+namespace sumi {
 
 void
 gni_transport::rdma_get_done(const message::ptr& msg)

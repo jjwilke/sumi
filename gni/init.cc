@@ -10,7 +10,7 @@
 static std::map<std::string, uint16_t> gni_enums;
 #define add_gni_enum(x) gni_enums[#x] = x
 
-namespace dharma {
+namespace sumi {
 
 void
 gni_transport::init()

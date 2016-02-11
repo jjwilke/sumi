@@ -15,9 +15,9 @@ AC_ARG_ENABLE(spinlock,
 )
 
 if test "X$enable_spinlock" = "Xyes"; then
-  AC_SUBST([dharma_use_spinlock], [1])
+  AC_SUBST([sumi_use_spinlock], [1])
 else
-  AC_SUBST([dharma_use_spinlock], [0])
+  AC_SUBST([sumi_use_spinlock], [0])
 fi
 
 ])

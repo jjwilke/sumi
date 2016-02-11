@@ -2,10 +2,10 @@ cmake_minimum_required (VERSION 2.6)
 #cmake_minimum_required (VERSION 2.8.8)
 # FOR CMAKE VERSIONS 2.6 TO 2.8.7, MUST USE CRAPPY_OLD_CMAKE
 
-project (DharmaAPI)
+project (SumiAPI)
 # The version number.
-set (DharmaAPI_VERSION_MAJOR 1)
-set (DharmaAPI_VERSION_MINOR 0)
+set (SumiAPI_VERSION_MAJOR 1)
+set (SumiAPI_VERSION_MINOR 0)
 
 include_directories( "${CMAKE_SOURCE_DIR}" ${CMAKE_BINARY_DIR} )
 
@@ -24,7 +24,7 @@ if (NOT SST AND NOT MPI AND NOT GNI AND NOT NO_TRANSPORT)
 message(FATAL_ERROR "You must choose SST, MPI, GNI, or NO_TRANSPORT")
 endif()
 
-add_subdirectory(dharma)
+add_subdirectory(sumi)
 
 if (NOT NO_TRANSPORT)
 add_subdirectory(fake)
@@ -34,9 +34,9 @@ endif()
 add_subdirectory(test)
 
 if (SPINLOCK)
-set (dharma_use_spinlock 1)
+set (sumi_use_spinlock 1)
 else()
-set (dharma_use_spinlock 0)
+set (sumi_use_spinlock 0)
 endif()
 
 if (NO_TRANSPORT)
@@ -62,6 +62,6 @@ set (rdma_header_file_include "<gni/rdma.h>")
 set (default_transport "gni")
 endif()
 
-configure_file(${CMAKE_SOURCE_DIR}/config.h.in ${CMAKE_BINARY_DIR}/dharma/config.h)
+configure_file(${CMAKE_SOURCE_DIR}/config.h.in ${CMAKE_BINARY_DIR}/sumi/config.h)
 
 

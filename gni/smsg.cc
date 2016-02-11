@@ -1,7 +1,7 @@
 #include <gni/gni_transport.h>
 #include <cstring>
 
-namespace dharma {
+namespace sumi {
 
 static const int smsg_cutoff = 1024;
 

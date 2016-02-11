@@ -3,7 +3,7 @@
 
 #define enumcase(x) case x: return #x
 
-namespace dharma {
+namespace sumi {
 
 const char* 
 gni_transport::strerror(gni_return_t rc)

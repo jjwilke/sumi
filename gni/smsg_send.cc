@@ -1,6 +1,6 @@
 #include <gni/gni_transport.h>
 
-namespace dharma {
+namespace sumi {
 
 void
 gni_transport::send_pending_smsg()

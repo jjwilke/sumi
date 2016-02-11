@@ -1,9 +1,9 @@
 #ifndef sst_RDMA_H
 #define sst_RDMA_H
 
-#include <dharma/rdma_mdata.h>
+#include <sumi/rdma_mdata.h>
 
-namespace dharma {
+namespace sumi {
 
 struct public_buffer : public public_buffer_base
 {

@@ -1,6 +1,6 @@
 #include <gni/gni_transport.h>
 
-namespace dharma {
+namespace sumi {
 
 void
 gni_transport::rdma_done(int src, gni_cq_entry_t& event_data, gni_cq_handle_t cqh)

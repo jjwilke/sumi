@@ -1,15 +1,15 @@
-#ifndef dharma_msg_api_h
-#define dharma_msg_api_h
+#ifndef sumi_msg_api_h
+#define sumi_msg_api_h
 
-#include <dharma/options.h>
-#include <dharma/message.h>
-#include <dharma/comm_functions.h>
-#include <dharma/collective_message.h>
-#include <dharma/timeout.h>
-#include <dharma/domain.h>
-#include <dharma/thread_safe_set.h>
+#include <sumi/options.h>
+#include <sumi/message.h>
+#include <sumi/comm_functions.h>
+#include <sumi/collective_message.h>
+#include <sumi/timeout.h>
+#include <sumi/domain.h>
+#include <sumi/thread_safe_set.h>
 
-namespace dharma {
+namespace sumi {
 
 void
 comm_init();
@@ -162,7 +162,7 @@ double
 wall_time();
 
 transport*
-dharma_api();
+sumi_api();
 
 }
 

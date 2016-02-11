@@ -1,22 +1,22 @@
-#ifndef sumi_DHARMA_TRANSPORT_H
-#define sumi_DHARMA_TRANSPORT_H
+#ifndef sumi_SUMI_TRANSPORT_H
+#define sumi_SUMI_TRANSPORT_H
 
 #include <sstmac/libraries/sumi/sumi_api.h>
-#include <dharma/monitor.h>
-#include <dharma/timeout.h>
-#include <dharma/message.h>
-#include <dharma/collective.h>
-#include <dharma/transport.h>
-#include <dharma/comm_functions.h>
+#include <sumi/monitor.h>
+#include <sumi/timeout.h>
+#include <sumi/message.h>
+#include <sumi/collective.h>
+#include <sumi/transport.h>
+#include <sumi/comm_functions.h>
 
-namespace dharma {
+namespace sumi {
 
-class sumi_dharma_transport :
+class sumi_sumi_transport :
   public sstmac::sumi::sumi_api,
   public transport
 {
  public:
-  sumi_dharma_transport();
+  sumi_sumi_transport();
 
   virtual void
   init();
@@ -30,7 +30,7 @@ class sumi_dharma_transport :
   void
   finalize_init();
 
-  virtual ~sumi_dharma_transport(){}
+  virtual ~sumi_sumi_transport(){}
 
   virtual sstmac::sumi::transport_message::payload_ptr
   handle(const sstmac::sumi::transport_message::ptr& msg);
@@ -43,7 +43,7 @@ class sumi_dharma_transport :
    * @return
    */
   collective_done_message::ptr
-  collective_block(dharma::collective::type_t ty, int tag);
+  collective_block(sumi::collective::type_t ty, int tag);
 
   void
   cq_notify();
@@ -98,4 +98,4 @@ class sumi_dharma_transport :
 
 }
 
-#endif // sumi_DHARMA_TRANSPORT_H
+#endif // sumi_SUMI_TRANSPORT_H

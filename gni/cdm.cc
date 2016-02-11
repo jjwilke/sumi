@@ -1,7 +1,7 @@
 #include <gni/gni_transport.h>
 #include <gni_pub.h>
 
-namespace dharma {
+namespace sumi {
 
 void
 gni_transport::init_cdm(gni_comm_context& c, pmi_env& env, int modes)

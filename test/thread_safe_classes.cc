@@ -1,12 +1,12 @@
 #include <sprockit/test/test.h>
 #include <sprockit/errors.h>
-#include <dharma/thread_safe_int.h>
-#include <dharma/thread_safe_list.h>
-#include <dharma/thread_safe_set.h>
+#include <sumi/thread_safe_int.h>
+#include <sumi/thread_safe_list.h>
+#include <sumi/thread_safe_set.h>
 
-using dharma::thread_safe_int;
-using dharma::thread_safe_list;
-using dharma::thread_safe_set;
+using sumi::thread_safe_int;
+using sumi::thread_safe_list;
+using sumi::thread_safe_set;
 
 // very simple functionality tests that do not fully exercise the
 // thread safety features

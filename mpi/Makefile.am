@@ -11,13 +11,13 @@
 
 AM_CPPFLAGS = -I$(top_builddir) -I$(top_srcdir) 
 
-noinst_LTLIBRARIES = libdharma_mpi.la
-libdharma_mpi_la_LDFLAGS = 
+noinst_LTLIBRARIES = libsumi_mpi.la
+libsumi_mpi_la_LDFLAGS = 
 
-libdharma_mpi_la_SOURCES = \
+libsumi_mpi_la_SOURCES = \
   mpi_transport.cc
 
-library_includedir=$(includedir)/dharma/mpi
+library_includedir=$(includedir)/sumi/mpi
 
 nobase_library_include_HEADERS = \
  mpi_transport.h \

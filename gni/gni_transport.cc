@@ -6,10 +6,10 @@
 
 RegisterDebugSlot(gni);
 
-namespace dharma {
+namespace sumi {
 
 SpktRegister("gni", transport, gni_transport,
-            "Create a DHARMA transport suitable for uGNI");
+            "Create a SUMI transport suitable for uGNI");
 
 #define enumcase(x) case x: return #x
 

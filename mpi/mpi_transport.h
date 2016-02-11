@@ -1,16 +1,16 @@
 #ifndef mpi_mpi_transport_h
 #define mpi_mpi_transport_h
 
-#include <dharma/monitor.h>
-#include <dharma/timeout.h>
-#include <dharma/message.h>
-#include <dharma/collective.h>
-#include <dharma/transport.h>
-#include <dharma/comm_functions.h>
-#include <dharma/active_msg_transport.h>
+#include <sumi/monitor.h>
+#include <sumi/timeout.h>
+#include <sumi/message.h>
+#include <sumi/collective.h>
+#include <sumi/transport.h>
+#include <sumi/comm_functions.h>
+#include <sumi/active_msg_transport.h>
 #include <mpi.h>
 
-namespace dharma {
+namespace sumi {
 
 
 class PendingMPI

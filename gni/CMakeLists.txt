@@ -31,7 +31,7 @@ endif()
 include_directories( "${CMAKE_SOURCE_DIR}" )
 
 if (CRAPPY_OLD_CMAKE)
-add_library( dharma_gni SHARED ${gni_SOURCES} ${gni_HEADERS} )
+add_library( sumi_gni SHARED ${gni_SOURCES} ${gni_HEADERS} )
 else()
 add_library( gni OBJECT ${gni_SOURCES} ${gni_HEADERS} )
 endif()

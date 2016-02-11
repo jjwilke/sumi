@@ -1,6 +1,6 @@
 #include <gni/gni_transport.h>
 
-namespace dharma {
+namespace sumi {
 
 void
 gni_transport::init_cq(gni_comm_context& c, gni_cq_handle_t* cqh, int num_entries)
