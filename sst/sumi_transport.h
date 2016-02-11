@@ -11,12 +11,12 @@
 
 namespace sumi {
 
-class sumi_sumi_transport :
+class sumi_transport :
   public sstmac::sumi::sumi_api,
   public transport
 {
  public:
-  sumi_sumi_transport();
+  sumi_transport();
 
   virtual void
   init();
@@ -30,7 +30,7 @@ class sumi_sumi_transport :
   void
   finalize_init();
 
-  virtual ~sumi_sumi_transport(){}
+  virtual ~sumi_transport(){}
 
   virtual sstmac::sumi::transport_message::payload_ptr
   handle(const sstmac::sumi::transport_message::ptr& msg);

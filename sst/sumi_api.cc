@@ -1,5 +1,5 @@
 #include <sst/sumi_api.h>
-#include <sst/sumi_sumi_transport.h>
+#include <sst/sumi_transport.h>
 #include <sstmac/software/process/app_manager.h>
 #include <sstmac/software/process/app.h>
 #include <sprockit/util.h>
@@ -9,13 +9,13 @@ using namespace sstmac::sw;
 
 namespace sumi {
 
-SpktRegister("sumi", api, sumi_sumi_transport, "Create bindings for SUMI runtime");
+SpktRegister("sumi", api, sumi_transport, "Create bindings for SUMI runtime");
 
-static sumi_sumi_transport*
+static sumi_transport*
 current_transport()
 {
   thread* t = thread::current();
-  return t->get_api<sumi_sumi_transport> ();
+  return t->get_api<sumi_transport> ();
 }
 
 transport*

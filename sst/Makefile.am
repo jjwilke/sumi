@@ -26,14 +26,14 @@ libsumi_sst_la_LDFLAGS =
 
 libsumi_sst_la_SOURCES = \
   sumi_api.cc \
-  sumi_sumi_transport.cc
+  sumi_transport.cc
 
 library_includedir=$(includedir)/sumi/sst
 
 nobase_library_include_HEADERS = \
  sumi_api.h \
  rdma.h \
- sumi_sumi_transport.h
+ sumi_transport.h
 
 # subscription.cc 
 # subscription.h 
