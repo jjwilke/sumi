@@ -33,3 +33,8 @@ if !ENABLE_SST_SUBREPO
 SUBDIRS += test
 endif
 
+if REPO_BUILD
+sumi_repo.h: .git/refs/master
+	cd $(abs_top_srcdir) && $(abs_top_srcdir)/bin/make_repo_header $(abs_top_srcdir) sstmac
+endif
+
