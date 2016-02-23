@@ -38,6 +38,8 @@ endif
 
 library_includedir=$(includedir)/sumi/sumi
 
+nodist_library_include_HEADERS = config.h sumi_config.h
+
 library_include_HEADERS = \
  active_msg_transport.h \
  allgather.h \
@@ -70,8 +72,7 @@ library_include_HEADERS = \
  thread_safe_set.h \
  timeout.h \
  transport.h \
- transport_fwd.h \
- config.h 
+ transport_fwd.h 
 
 libsumi_la_SOURCES = \
  active_msg_transport.cc \
