@@ -12,7 +12,7 @@
 namespace sumi {
 
 class sumi_transport :
-  public sstmac::sumi::sumi_api,
+  public sstmac::sumi_api,
   public transport
 {
  public:
@@ -32,8 +32,8 @@ class sumi_transport :
 
   virtual ~sumi_transport(){}
 
-  virtual sstmac::sumi::transport_message::payload_ptr
-  handle(const sstmac::sumi::transport_message::ptr& msg);
+  virtual sstmac::transport_message::payload_ptr
+  handle(const sstmac::transport_message::ptr& msg);
 
   /**
    * Block on a collective of a particular type and tag

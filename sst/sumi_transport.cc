@@ -16,8 +16,8 @@ sumi_transport::sumi_transport()
 {
 }
 
-sstmac::sumi::transport_message::payload_ptr
-sumi_transport::handle(const sstmac::sumi::transport_message::ptr& smsg)
+sstmac::transport_message::payload_ptr
+sumi_transport::handle(const sstmac::transport_message::ptr& smsg)
 {
   if (!smsg){
     //this is sloppy - but oh well
@@ -83,9 +83,9 @@ sumi_transport::handle(const sstmac::sumi::transport_message::ptr& smsg)
 void
 sumi_transport::init()
 {
-  sstmac::sumi::sumi_api::init();
-  transport::nproc_ = sstmac::sumi::sumi_api::nproc_;
-  transport::rank_ = sstmac::sumi::sumi_api::rank_;
+  sstmac::sumi_api::init();
+  transport::nproc_ = sstmac::sumi_api::nproc_;
+  transport::rank_ = sstmac::sumi_api::rank_;
   transport::init();
 }
 
@@ -94,7 +94,7 @@ sumi_transport::finalize()
 {
   debug_printf(sprockit::dbg::sumi,
     "Rank %d finalizing", transport::rank_);
-  sstmac::sumi::sumi_api::finalize();
+  sstmac::sumi_api::finalize();
   transport::finalize();
   monitor_->validate_done();
   stop_heartbeat();
@@ -125,7 +125,7 @@ sumi_transport::init_factory_params(sprockit::sim_parameters* params)
   sstmac::sw::task_id tid = thr->tid();
   sstmac::sw::software_id sid(aid, tid);
   init_param1(sid);
-  sstmac::sumi::sumi_api::init_factory_params(params);
+  sstmac::sumi_api::init_factory_params(params);
   transport::init_factory_params(params);
 }
 
@@ -133,7 +133,7 @@ void
 sumi_transport::finalize_init()
 {
   sstmac::sw::thread::current()->register_lib(this);
-  sstmac::sumi::sumi_api::finalize_init();
+  sstmac::sumi_api::finalize_init();
 }
 
 void
@@ -186,7 +186,7 @@ sumi_transport::do_nvram_get(int dst, const message::ptr& msg)
 message::ptr
 sumi_transport::block_until_message()
 {
-  sstmac::sumi::transport_message::payload_ptr msg = sstmac::sumi::sumi_api::poll_until_notification();
+  sstmac::transport_message::payload_ptr msg = sstmac::sumi_api::poll_until_notification();
   return ptr_safe_cast(sumi::message, msg);
 }
 
@@ -194,7 +194,7 @@ message::ptr
 sumi_transport::block_until_message(double timeout)
 {
   sstmac::timestamp to(timeout);
-  sstmac::sumi::transport_message::payload_ptr msg = sstmac::sumi::sumi_api::poll_until_notification(to);
+  sstmac::transport_message::payload_ptr msg = sstmac::sumi_api::poll_until_notification(to);
   return ptr_test_cast(sumi::message, msg);
 }
 
@@ -205,7 +205,7 @@ sumi_transport::cq_notify()
   //a null message indicates a cq notification
   if (blocked()){
     debug_printf(sprockit::dbg::sumi, "Rank %d generating cq notification", sumi_api::rank_);
-    incoming_message(sstmac::sumi::transport_message::ptr());
+    incoming_message(sstmac::transport_message::ptr());
   }
 }
 
