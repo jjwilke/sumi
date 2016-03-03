@@ -62,6 +62,10 @@ sumi_transport::handle(const sstmac::transport_message::ptr& smsg)
     my_msg->set_payload_type(message::rdma_get_nack);
     transport::handle(my_msg);
     break;
+   case sstmac::hw::network_message::payload_sent_ack:
+    my_msg->set_payload_type(message::eager_payload_ack);
+    transport::handle(my_msg);
+    break;
    case sstmac::hw::network_message::rdma_get_sent_ack:
     my_msg->set_payload_type(message::rdma_get_ack);
     transport::handle(my_msg);

@@ -17,6 +17,7 @@ message::is_nic_ack() const
   {
   case rdma_put_ack:
   case rdma_get_ack:
+  case eager_payload_ack:
     return true;
   default:
     return false;
@@ -97,6 +98,7 @@ message::tostr(payload_type_t ty)
   switch(ty) {
     enumcase(header);
     enumcase(eager_payload);
+    enumcase(eager_payload_ack);
     enumcase(rdma_put);
     enumcase(rdma_get);
     enumcase(rdma_put_ack);

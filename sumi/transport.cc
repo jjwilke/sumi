@@ -262,8 +262,9 @@ void
 transport::handle(const message::ptr& msg)
 {
   debug_printf(sprockit::dbg::sumi,
-    "Rank %d got message of class %s, payload %s for sender %d, recver %d",
-     rank_, message::tostr(msg->class_type()), message::tostr(msg->payload_type()),
+    "Rank %d got message %p of class %s, payload %s for sender %d, recver %d",
+     rank_, msg.get(),
+     message::tostr(msg->class_type()), message::tostr(msg->payload_type()),
      msg->sender(), msg->recver());
 
   //we might have collectives to delete and cleanup
@@ -854,8 +855,9 @@ transport::smsg_send(int dst, message::payload_type_t ev, const message::ptr& ms
 
 
   debug_printf(sprockit::dbg::sumi,
-    "Rank %d SUMI sending short message to %d",
-    rank_, dst);
+    "Rank %d SUMI sending short message to %d, ack %srequested ",
+    rank_, dst,
+    (needs_ack ? "" : "NOT "));
 
   if (dst == rank_) {
     //deliver to self
@@ -980,15 +982,15 @@ transport::configure_send(int dst, message::payload_type_t ev, const message::pt
 }
 
 void
-transport::send_header(int dst, const message::ptr& msg)
+transport::send_header(int dst, const message::ptr& msg, bool needs_ack)
 {
-  smsg_send(dst, message::header, msg);
+  smsg_send(dst, message::header, msg, needs_ack);
 }
 
 void
-transport::send_payload(int dst, const message::ptr& msg)
+transport::send_payload(int dst, const message::ptr& msg, bool needs_ack)
 {
-  smsg_send(dst, message::eager_payload, msg);
+  smsg_send(dst, message::eager_payload, msg, needs_ack);
 }
 
 void

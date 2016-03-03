@@ -62,7 +62,7 @@ class transport :
    * @param msg
    */
   void
-  send_header(int dst, const message::ptr& msg);
+  send_header(int dst, const message::ptr& msg, bool needs_ack = false);
 
   /**
    Helper function for #smsg_send. Directly send an actual data payload.
@@ -70,7 +70,7 @@ class transport :
    * @param msg
    */
   void
-  send_payload(int dst, const message::ptr& msg);
+  send_payload(int dst, const message::ptr& msg, bool needs_ack = false);
 
   /**
    Put a message directly to the destination node.

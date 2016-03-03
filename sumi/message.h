@@ -25,6 +25,7 @@ class message :
   typedef enum {
     header,
     eager_payload,
+    eager_payload_ack,
     software_ack,
     nvram_get,
     rdma_put,
