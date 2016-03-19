@@ -33,7 +33,7 @@ class sumi_transport :
   virtual ~sumi_transport(){}
 
   virtual sstmac::transport_message::payload_ptr
-  handle(const sstmac::transport_message::ptr& msg);
+  handle(sstmac::transport_message* msg);
 
   /**
    * Block on a collective of a particular type and tag

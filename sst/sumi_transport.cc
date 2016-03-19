@@ -17,7 +17,7 @@ sumi_transport::sumi_transport()
 }
 
 sstmac::transport_message::payload_ptr
-sumi_transport::handle(const sstmac::transport_message::ptr& smsg)
+sumi_transport::handle(sstmac::transport_message* smsg)
 {
   if (!smsg){
     //this is sloppy - but oh well
@@ -209,7 +209,7 @@ sumi_transport::cq_notify()
   //a null message indicates a cq notification
   if (blocked()){
     debug_printf(sprockit::dbg::sumi, "Rank %d generating cq notification", sumi_api::rank_);
-    incoming_message(sstmac::transport_message::ptr());
+    incoming_message(NULL);
   }
 }
 
