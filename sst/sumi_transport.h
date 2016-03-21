@@ -2,6 +2,7 @@
 #define sumi_SUMI_TRANSPORT_H
 
 #include <sstmac/libraries/sumi/sumi_api.h>
+#include <sstmac/libraries/sumi/message_fwd.h>
 #include <sumi/monitor.h>
 #include <sumi/timeout.h>
 #include <sumi/message.h>
@@ -32,8 +33,8 @@ class sumi_transport :
 
   virtual ~sumi_transport(){}
 
-  virtual sstmac::transport_message::payload_ptr
-  handle(const sstmac::transport_message::ptr& msg);
+  virtual sstmac::sumi::payload_ptr
+  handle(sstmac::transport_message* msg);
 
   /**
    * Block on a collective of a particular type and tag

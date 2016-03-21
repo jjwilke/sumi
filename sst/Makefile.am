@@ -17,6 +17,7 @@ AM_CPPFLAGS += -I$(top_srcdir)/.. -I$(top_builddir)/..
 AM_CPPFLAGS += -I$(top_srcdir)/../sprockit -I$(top_builddir)/../sprockit
 AM_CPPFLAGS += -I$(top_builddir)/../sstmac/replacements -I$(top_srcdir)/../sstmac/replacements 
 AM_CPPFLAGS += -I$(top_srcdir)/../sstmac/install -DSSTMAC=1
+AM_CPPFLAGS += @extra_sst_flags@
 endif
 
 
@@ -35,7 +36,5 @@ nobase_library_include_HEADERS = \
  rdma.h \
  sumi_transport.h
 
-# subscription.cc 
-# subscription.h 
 
 
