@@ -1,7 +1,12 @@
+#include <sstmac/common/sstmac_config.h>
+#if SSTMAC_INTEGRATED_SST_CORE
+#include <sst/core/event.h>
+#endif
 #include <sst/sumi_transport.h>
 #include <sstmac/software/process/api.h>
 #include <sstmac/software/process/app.h>
-
+#include <sstmac/common/event_callback.h>
+#include <sstmac/libraries/sumi/message.h>
 
 ImplementAPI(sumi, sumi_transport, "sumi");
 
@@ -16,8 +21,8 @@ sumi_transport::sumi_transport()
 {
 }
 
-sstmac::transport_message::payload_ptr
-sumi_transport::handle(const sstmac::transport_message::ptr& smsg)
+sstmac::sumi::payload_ptr
+sumi_transport::handle(sstmac::transport_message* smsg)
 {
   if (!smsg){
     //this is sloppy - but oh well
@@ -190,7 +195,7 @@ sumi_transport::do_nvram_get(int dst, const message::ptr& msg)
 message::ptr
 sumi_transport::block_until_message()
 {
-  sstmac::transport_message::payload_ptr msg = sstmac::sumi_api::poll_until_notification();
+  sstmac::sumi::payload_ptr msg = sstmac::sumi_api::poll_until_notification();
   return ptr_safe_cast(sumi::message, msg);
 }
 
@@ -198,7 +203,7 @@ message::ptr
 sumi_transport::block_until_message(double timeout)
 {
   sstmac::timestamp to(timeout);
-  sstmac::transport_message::payload_ptr msg = sstmac::sumi_api::poll_until_notification(to);
+  sstmac::sumi::payload_ptr msg = sstmac::sumi_api::poll_until_notification(to);
   return ptr_test_cast(sumi::message, msg);
 }
 
