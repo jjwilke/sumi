@@ -52,8 +52,7 @@ void
 comm_kill_node()
 {
   current_transport()->kill_node();
-  //sleep for a bit so we don't go back to doing any work until AFTER death
-  thread::current()->parent_app()->sleep(sstmac::timestamp(1e-6));
+  throw terminate_exception();
 }
 
 void
