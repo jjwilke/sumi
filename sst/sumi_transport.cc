@@ -214,7 +214,7 @@ sumi_transport::cq_notify()
   //a null message indicates a cq notification
   if (blocked()){
     debug_printf(sprockit::dbg::sumi, "Rank %d generating cq notification", sumi_api::rank_);
-    incoming_message(sstmac::transport_message::ptr());
+    incoming_message(NULL);
   }
 }
 
@@ -273,7 +273,7 @@ sumi_transport::schedule_next_heartbeat()
 void
 sumi_transport::delayed_transport_handle(const sumi::message::ptr &msg)
 {
-  sstmac::event* done_ev = sstmac::new_event(loc_, this, &transport::handle, msg);
+  sstmac::event_queue_entry* done_ev = sstmac::new_event(loc_, this, &transport::handle, msg);
   schedule_delay(sstmac::timestamp(1e-9), done_ev);
 }
 
@@ -281,7 +281,7 @@ void
 sumi_transport::schedule_ping_timeout(sumi::pinger* pnger, double to)
 {
   sstmac::timestamp next_ping_time = api::now() + to;
-  sstmac::event* cb_event = sstmac::new_event(loc_, this, &sumi_transport::ping_timeout, pnger);
+  sstmac::event_queue_entry* cb_event = sstmac::new_event(loc_, this, &sumi_transport::ping_timeout, pnger);
   api::schedule(next_ping_time, cb_event);
 }
 
