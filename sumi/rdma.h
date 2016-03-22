@@ -1,16 +1,32 @@
-#ifndef RDMA_interface_H
-#define RDMA_interface_H
+#ifndef sumi_rdma_h
+#define sumi_rdma_h
 
-#include <sumi/config.h>
-#include <sprockit/serializer_fwd.h>
+#include <sumi/rdma_mdata.h>
 
-#define ImplementRdmaAPI \
-public: \
- sumi::public_buffer& local_buffer() { return local_buffer_; } \
- sumi::public_buffer& remote_buffer() { return remote_buffer_; } \
-private: \
- sumi::public_buffer local_buffer_; \
- sumi::public_buffer remote_buffer_;
+namespace sumi {
+
+struct public_buffer :
+ public public_buffer_base
+{
+ public:
+  explicit public_buffer(void* buf){
+    ptr = buf;
+  }
+
+  public_buffer() {
+    ptr = 0;
+  }
+
+  void offset_ptr(int offset) {
+    if (ptr){
+      public_buffer_base::offset_ptr(offset);
+    }
+  }
+
+};
+
+}
 
 
 #endif // RDMA_H
+

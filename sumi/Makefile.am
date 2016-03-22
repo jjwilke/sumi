@@ -24,10 +24,6 @@ endif
 
 libsumi_la_LIBADD = 
 
-if ENABLE_SST
-libsumi_la_LIBADD += ../sst/libsumi_sst.la
-endif
-
 if ENABLE_MPI
 libsumi_la_LIBADD += ../mpi/libsumi_mpi.la
 endif
@@ -62,6 +58,7 @@ library_include_HEADERS = \
  partner_timeout.h \
  ping.h \
  rdma.h \
+ rdma_interface.h \
  rdma_mdata.h \
  thread.h \
  thread_lock.h \
@@ -93,5 +90,4 @@ libsumi_la_SOURCES = \
  thread_safe_set.cc \
  transport.cc
 
-# rdma.cc 
 

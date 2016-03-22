@@ -6,7 +6,7 @@
 #include <sprockit/clonable.h>
 #include <sprockit/ser_ptr_type.h>
 #include <sprockit/util.h>
-#include <sumi/rdma.h>
+#include <sumi/rdma_interface.h>
 
 namespace sumi {
 

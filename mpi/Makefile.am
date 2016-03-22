@@ -20,6 +20,5 @@ libsumi_mpi_la_SOURCES = \
 library_includedir=$(includedir)/sumi/mpi
 
 nobase_library_include_HEADERS = \
- mpi_transport.h \
- rdma.h
+ mpi_transport.h 
 

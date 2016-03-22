@@ -16,7 +16,7 @@ AC_ARG_ENABLE(mpi,
 
 if test "X$enable_mpi" = "Xyes"; then
   AM_CONDITIONAL(ENABLE_MPI, true)
-  AC_SUBST([rdma_header_file_include], ["<mpi/rdma.h>"])
+  AC_SUBST([rdma_header_file_include], ["<sumi/rdma.h>"])
   AC_SUBST([default_transport], ["mpi"])
 else
   AM_CONDITIONAL(ENABLE_MPI, false)

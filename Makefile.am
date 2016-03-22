@@ -15,10 +15,6 @@ EXTRA_DIST = bin/runtest
 
 SUBDIRS = 
 
-if ENABLE_SST
-SUBDIRS += sst
-endif
-
 if ENABLE_GNI
 SUBDIRS += gni
 endif
@@ -28,10 +24,6 @@ SUBDIRS += mpi
 endif
 
 SUBDIRS += sumi 
-
-if !ENABLE_SST_SUBREPO
-SUBDIRS += test
-endif
 
 if REPO_BUILD
 sumi_repo.h: .git/refs/master

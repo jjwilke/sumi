@@ -14,25 +14,9 @@ AC_ARG_ENABLE(sst,
   ]
 )
 
-AC_ARG_WITH(extra-sst-flags,
-  [AS_HELP_STRING(
-    [--with-extra-sst-flags],
-    []
-    )],
-  [
-    AC_SUBST([extra_sst_flags],["$withval"])
-  ], [
-    AC_SUBST([extra_sst_flags],["$withval"])
-  ]
-)
-
 if test "X$enable_sst" = "Xyes"; then
-  AM_CONDITIONAL(ENABLE_SST, true)
-  AC_SUBST([rdma_header_file_include], ["<sst/rdma.h>"])
+  AC_SUBST([rdma_header_file_include], ["<sumi/rdma.h>"])
   AC_SUBST([default_transport], ["sst"])
-  AC_CONFIG_FILES([sst/Makefile])
-else
-  AM_CONDITIONAL(ENABLE_SST, false)
 fi
 
 ])
